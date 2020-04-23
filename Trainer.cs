@@ -9,9 +9,19 @@ namespace Komplettering
     class Trainer
     {
         Collection pokemonCollection = new Collection();
+        public void PokemonCollection(int i)
+        {
+            pokemonCollection.PokemonCollection(i);
+        }
         public void ThrowPokemon(int i)
         {
             pokemonCollection.ThrowPokemon(i, this);
+            
+            
+        }
+        public void AddPokemonToCollection(Pokemon pokemon)
+        {
+            pokemonCollection.AddPokemons(pokemon);
         }
     }
 }

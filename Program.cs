@@ -11,7 +11,11 @@ namespace Komplettering
         static void Main(string[] args)
         {
             Trainer ash = new Trainer();
-            ash.ThrowPokemon(1);
+            Pikachu pikachu = new Pikachu();
+            ash.AddPokemonToCollection(pikachu);
+            ash.PokemonCollection(0); 
+            ash.ThrowPokemon(0);
+            Console.ReadLine();
         }
     }
 }

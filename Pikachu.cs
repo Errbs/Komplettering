@@ -8,5 +8,11 @@ namespace Komplettering
 {
     class Pikachu:Pokemon
     {
+        public Pikachu()
+        {
+            name = "Pikachu";
+
+            
+        }
     }
 }
