@@ -9,6 +9,7 @@ namespace Komplettering
     class Collection
     {
         List<Pokemon> pokemons = new List<Pokemon>();
+        HashSet<int> pokemonsThrown = new HashSet<int>();
 
         public void PokemonCollection(int i)
         {
@@ -25,12 +26,27 @@ namespace Komplettering
 
         public void PokemonThrownOut(int i)
         {
-            pokemons.Remove(pokemons[i]);
+            pokemonsThrown.Add(i);
+
+            if (pokemonsThrown.Contains(i) == true)
+            {
+                
+                Console.WriteLine(pokemons[i] + " thrown out!");
+                pokemons.Remove(pokemons[i]);
+            }
+            else
+            {
+                Console.WriteLine("You can't throw the same pokemon twice!");
+            }
+            
         }
       
         public void ThrowPokemon(int i, Trainer a)
         {
-            PokemonThrownOut(i);
+           
+                PokemonThrownOut(i);
+        
+                
                     
 
             

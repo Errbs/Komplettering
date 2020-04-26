@@ -9,6 +9,11 @@ namespace Komplettering
     class Pokemon
     {
         public string name;
+        public Pokemon()
+        {
+            name = "Pokemon";
+        }
+
        
 
     }

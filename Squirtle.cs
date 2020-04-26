@@ -8,5 +8,9 @@ namespace Komplettering
 {
     class Squirtle:Pokemon
     {
+        public Squirtle()
+        {
+            name = "Squirtle";
+        }
     }
 }
