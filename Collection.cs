@@ -13,7 +13,7 @@ namespace Komplettering
 
         public void PokemonCollection(int i)
         {
-            for(int n=0; n<i||n==i; n++)
+            for(int n=0; n<i||n==i; n++) // it won't write out the second pokemons name so I should probably use the list in the forloop
             {
                 Console.WriteLine(pokemons[n].name); 
             }
@@ -31,7 +31,7 @@ namespace Komplettering
             if (pokemonsThrown.Contains(i) == true)
             {
                 
-                Console.WriteLine(pokemons[i] + " thrown out!");
+                Console.WriteLine(pokemons[i] + " thrown out!"); //Index was out of range, I don't understand why this error pops up.
                 pokemons.Remove(pokemons[i]);
             }
             else
