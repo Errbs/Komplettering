@@ -13,7 +13,7 @@ namespace Komplettering
 
         public void PokemonCollection(int i)
         {
-            for(int n=0; n<i||n==i; n++) // it won't write out the second pokemons name so I should probably use the list in the forloop
+            for(int n=0; n<i||n==i; n++) // It writes out the same pokemons name twice
             {
                 Console.WriteLine(pokemons[n].name); 
             }
@@ -26,17 +26,17 @@ namespace Komplettering
 
         public void PokemonThrownOut(int i)
         {
-            pokemonsThrown.Add(i);
-
-            if (pokemonsThrown.Contains(i) == true)
+           
+            if (pokemonsThrown.Add(i) == true)
             {
-                
-                Console.WriteLine(pokemons[i] + " thrown out!"); //Index was out of range, I don't understand why this error pops up.
-                pokemons.Remove(pokemons[i]);
+                Console.WriteLine(pokemons[0].name + " thrown out!"); //Works if I set it to 0 however if I set it to i, it is out of range when it is 1 because we already threw a pokemon oout makin 1 as an index for the list unvalid.
+                pokemons.Remove(pokemons[0]);
+               
             }
             else
             {
                 Console.WriteLine("You can't throw the same pokemon twice!");
+
             }
             
         }
