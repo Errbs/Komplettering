@@ -12,7 +12,12 @@ namespace Komplettering
         {
             name = "Pikachu";
 
-            
         }
+
+        public override void PokemonIndex(int i)
+        {
+            index = i;
+        }
+        //make an index method that communicates what index in the list the pokemon has
     }
 }

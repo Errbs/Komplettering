@@ -13,15 +13,17 @@ namespace Komplettering
             Trainer ash = new Trainer();
             Pikachu pikachu = new Pikachu();
             Squirtle squirtle = new Squirtle();
+            Pidgey pidgey = new Pidgey();
 
             ash.AddPokemonToCollection(pikachu);
-            ash.PokemonCollection(0);
             ash.AddPokemonToCollection(squirtle);
-            ash.PokemonCollection(1);
+            ash.PokemonCollection(squirtle.index);
 
-            ash.ThrowPokemon(0);
-            ash.ThrowPokemon(1);
-            ash.ThrowPokemon(1);
+            ash.ThrowPokemon(pikachu.index, pikachu);
+            ash.ThrowPokemon(squirtle.index, squirtle);
+            ash.ThrowPokemon(squirtle.index, squirtle);
+            ash.AddPokemonToCollection(pidgey);
+            ash.PokemonCollection(pidgey.index);
             
             Console.ReadLine();
         }

@@ -9,42 +9,61 @@ namespace Komplettering
     class Collection
     {
         List<Pokemon> pokemons = new List<Pokemon>();
-        HashSet<int> pokemonsThrown = new HashSet<int>();
+             
+
+       HashSet<string> pokemonsAdded = new HashSet<string>();
+       HashSet<string> pokemonsRemoved = new HashSet<string>();
+
+        public void SetPokemonIndex(Pokemon pokemon)
+        {
+           pokemon.index = pokemons.IndexOf(pokemon);
+                                  
+        }
 
         public void PokemonCollection(int i)
         {
-            for(int n=0; n<i||n==i; n++) // It writes out the same pokemons name twice
+            Console.WriteLine("POKÉMON COLLECTION:");
+            for(int n = 0; n == i||n<i; n++) 
             {
-                Console.WriteLine(pokemons[n].name); 
+                Console.WriteLine(pokemons[n].name);  
             }
         }
 
         public void AddPokemons(Pokemon pokemon)
         {
-            pokemons.Add(pokemon);
-        }
-
-        public void PokemonThrownOut(int i)
-        {
-           
-            if (pokemonsThrown.Add(i) == true)
+            if (pokemonsAdded.Add(pokemon.name) == true)
             {
-                Console.WriteLine(pokemons[0].name + " thrown out!"); //Works if I set it to 0 however if I set it to i, it is out of range when it is 1 because we already threw a pokemon oout makin 1 as an index for the list unvalid.
-                pokemons.Remove(pokemons[0]);
-               
+                pokemons.Add(pokemon);
+                SetPokemonIndex(pokemon);
+                
             }
             else
             {
-                Console.WriteLine("You can't throw the same pokemon twice!");
-
+                Console.WriteLine("You have already collected " + pokemon.name);
             }
             
         }
+
+        public void PokemonThrownOut(int i, Pokemon pokemon)
+        {
+            if (pokemonsRemoved.Add(pokemon.name)==true)
+            {
+                Console.WriteLine(pokemons[pokemons.IndexOf(pokemon)].name + " thrown out!");
+                pokemons.Remove(pokemons[pokemons.IndexOf(pokemon)]);
+
+            }
+            else
+            {
+                Console.WriteLine(pokemon.name + " has already been thrown out!");
+            }
+                                    
+                      
+        }
       
-        public void ThrowPokemon(int i, Trainer a)
+        public void ThrowPokemon(int i, Trainer a, Pokemon pokemon)
         {
            
-                PokemonThrownOut(i);
+                PokemonThrownOut(i, pokemon);
         
                 
                     

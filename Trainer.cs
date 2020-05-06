@@ -13,11 +13,15 @@ namespace Komplettering
         {
             pokemonCollection.PokemonCollection(i);
         }
-        public void ThrowPokemon(int i)
+        public void ThrowPokemon(int i, Pokemon pokemon)
         {
-            pokemonCollection.ThrowPokemon(i, this);
+            pokemonCollection.ThrowPokemon(i, this, pokemon);
             
             
+        }
+        public void SetPokemonIndex(Pokemon pokemon)
+        {
+            pokemonCollection.SetPokemonIndex(pokemon);
         }
         public void AddPokemonToCollection(Pokemon pokemon)
         {

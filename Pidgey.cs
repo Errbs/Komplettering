@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Komplettering
 {
-    class Squirtle:Pokemon
+    class Pidgey: Pokemon
     {
-        public Squirtle()
+        public Pidgey()
         {
-            name = "Squirtle";
-            index = 1;
+            name = "Pidgey";
+            
         }
         public override void PokemonIndex(int i)
         {

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collection.cs" />
+    <Compile Include="Pidgey.cs" />
     <Compile Include="Pokemon.cs" />
     <Compile Include="Pikachu.cs" />
     <Compile Include="Program.cs" />

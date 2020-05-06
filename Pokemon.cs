@@ -9,9 +9,17 @@ namespace Komplettering
     class Pokemon
     {
         public string name;
+        public int index;
+        
         public Pokemon()
         {
-            name = "Pokemon";
+           
+                      
+        }
+        
+        public virtual void PokemonIndex(int i)
+        {
+            
         }
 
        
