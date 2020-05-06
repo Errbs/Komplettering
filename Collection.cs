@@ -33,8 +33,10 @@ namespace Komplettering
         {
             if (pokemonsAdded.Add(pokemon.name) == true)
             {
+                pokemonsRemoved.Remove(pokemon.name);
                 pokemons.Add(pokemon);
                 SetPokemonIndex(pokemon);
+                Console.WriteLine(pokemon.name + " was added to Collection!");
                 
             }
             else
@@ -48,6 +50,7 @@ namespace Komplettering
         {
             if (pokemonsRemoved.Add(pokemon.name)==true)
             {
+                pokemonsAdded.Remove(pokemon.name);
                 Console.WriteLine(pokemons[pokemons.IndexOf(pokemon)].name + " thrown out!");
                 pokemons.Remove(pokemons[pokemons.IndexOf(pokemon)]);
 

@@ -24,6 +24,7 @@ namespace Komplettering
             ash.ThrowPokemon(squirtle.index, squirtle);
             ash.AddPokemonToCollection(pidgey);
             ash.PokemonCollection(pidgey.index);
+            ash.AddPokemonToCollection(pikachu);
             
             Console.ReadLine();
         }
