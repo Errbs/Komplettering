@@ -11,10 +11,20 @@ namespace Komplettering
         public string name;
         public int index;
         
+        
         public Pokemon()
         {
            
+            
+            
                       
+        }
+        public List<Pokemon> PokemonsExisting(Outside outside, Pikachu pika, Pidgey pidge, Squirtle squi)
+        {
+            outside.existingPokemon.Add(pika);
+            outside.existingPokemon.Add(pidge);
+            outside.existingPokemon.Add(squi);
+            return outside.existingPokemon;
         }
         
         public virtual void PokemonIndex(int i)

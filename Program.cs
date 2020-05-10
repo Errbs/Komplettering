@@ -14,8 +14,59 @@ namespace Komplettering
             Pikachu pikachu = new Pikachu();
             Squirtle squirtle = new Squirtle();
             Pidgey pidgey = new Pidgey();
+            Location location = new Home();
+            bool continueRunning = true;
+                      
 
-            ash.AddPokemonToCollection(pikachu);
+            ash.Actions(location);
+            string input;
+            int answer;
+            input = Console.ReadLine();
+            bool validAnswer = int.TryParse(input, out answer);
+            if (validAnswer == true&&answer == 1||answer == 2||answer == 3)
+            {
+                while (continueRunning == true)
+                {
+                    if (answer == 1)
+                    {
+                        ash.Action1(location);
+                        ash.Actions(location);
+
+
+
+                    }
+                    else if (answer == 2)
+                    {
+                        location = ash.Action2(location);
+                        ash.Actions(location);
+
+                    }
+                    else if (answer == 3)
+                    {
+                        ash.PokemonCollection(ash.actions.Count, location);
+                    }
+                   
+                    else
+                    {
+                        Console.WriteLine("Answer with 1, 2 or 3");
+
+                    }
+
+                    input = Console.ReadLine();
+                    validAnswer = int.TryParse(input, out answer);
+
+
+                }
+
+            }
+         
+            //Coming back to this later
+
+
+
+
+
+            /*ash.AddPokemonToCollection(pikachu);
             ash.AddPokemonToCollection(squirtle);
             ash.PokemonCollection(squirtle.index);
 
@@ -25,6 +76,7 @@ namespace Komplettering
             ash.AddPokemonToCollection(pidgey);
             ash.PokemonCollection(pidgey.index);
             ash.AddPokemonToCollection(pikachu);
+            */
             
             Console.ReadLine();
         }

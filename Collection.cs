@@ -8,34 +8,32 @@ namespace Komplettering
 {
     class Collection
     {
-        List<Pokemon> pokemons = new List<Pokemon>();
-             
+       //protected List<Pokemon> pokemons = new List<Pokemon>();
+       protected HashSet<string> pokemonsAdded = new HashSet<string>();
+       //protected HashSet<string> pokemonsRemoved = new HashSet<string>();
 
-       HashSet<string> pokemonsAdded = new HashSet<string>();
-       HashSet<string> pokemonsRemoved = new HashSet<string>();
-
-        public void SetPokemonIndex(Pokemon pokemon)
+        public void SetPokemonIndex(Pokemon pokemon, Trainer a)
         {
-           pokemon.index = pokemons.IndexOf(pokemon);
+           pokemon.index = a.pokemons.IndexOf(pokemon);
                                   
         }
 
-        public void PokemonCollection(int i)
+        public void PokemonCollection(int i, Trainer a)
         {
             Console.WriteLine("POKÉMON COLLECTION:");
             for(int n = 0; n == i||n<i; n++) 
             {
-                Console.WriteLine(pokemons[n].name);  
+                Console.WriteLine(a.pokemons[n].name);  
             }
         }
 
-        public void AddPokemons(Pokemon pokemon)
+        public void AddPokemons(Pokemon pokemon, Trainer a)
         {
             if (pokemonsAdded.Add(pokemon.name) == true)
             {
-                pokemonsRemoved.Remove(pokemon.name);
-                pokemons.Add(pokemon);
-                SetPokemonIndex(pokemon);
+                //pokemonsRemoved.Remove(pokemon.name);
+                a.pokemons.Add(pokemon);
+                a.SetPokemonIndex(pokemon);
                 Console.WriteLine(pokemon.name + " was added to Collection!");
                 
             }
@@ -46,33 +44,24 @@ namespace Komplettering
             
         }
 
-        public void PokemonThrownOut(int i, Pokemon pokemon)
+            
+        /*public void ThrowPokemon(Trainer a, Pokemon pokemon)
         {
-            if (pokemonsRemoved.Add(pokemon.name)==true)
+
+            if (pokemonsRemoved.Add(pokemon.name) == true)
             {
                 pokemonsAdded.Remove(pokemon.name);
-                Console.WriteLine(pokemons[pokemons.IndexOf(pokemon)].name + " thrown out!");
-                pokemons.Remove(pokemons[pokemons.IndexOf(pokemon)]);
+                Console.WriteLine(a.pokemons[a.pokemons.IndexOf(pokemon)].name + " thrown out!");
+                a.pokemons.Remove(a.pokemons[a.pokemons.IndexOf(pokemon)]);
 
             }
             else
             {
                 Console.WriteLine(pokemon.name + " has already been thrown out!");
             }
-                                    
-                      
-        }
-      
-        public void ThrowPokemon(int i, Trainer a, Pokemon pokemon)
-        {
-           
-                PokemonThrownOut(i, pokemon);
-        
-                
-                    
 
-            
 
         }
+        */
     }
 }
