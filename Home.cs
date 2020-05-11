@@ -35,7 +35,7 @@ namespace Komplettering
             a.actions.Clear();
         }
 
-        public override void PrimaryAction()
+        public override void PrimaryAction(Trainer a)
         {
             
             Console.WriteLine("S");

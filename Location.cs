@@ -21,7 +21,7 @@ namespace Komplettering
         {
             
         }
-        public virtual void PrimaryAction()
+        public virtual void PrimaryAction(Trainer a)
         {
 
         }

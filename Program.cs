@@ -43,7 +43,7 @@ namespace Komplettering
                     }
                     else if (answer == 3)
                     {
-                        ash.PokemonCollection(ash.actions.Count, location);
+                        ash.PokemonCollection(location, ash.pokemons[ash.pokemons.Count-1]);
                     }
                    
                     else

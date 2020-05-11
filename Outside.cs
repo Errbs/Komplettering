@@ -38,16 +38,16 @@ namespace Komplettering
             a.actions.Clear();
         }
 
-        public override void PrimaryAction()
+        public override void PrimaryAction(Trainer a)
         {
             existingPokemon = p.PokemonsExisting(this, pikachu, pidgey, squirtle);
-            random = randomPokemon.Next(existingPokemon.Count);
+            random = randomPokemon.Next(existingPokemon.Count-1);
             Console.WriteLine("You found " + existingPokemon[random].name + " write c to catch.");
             string answer = Console.ReadLine();
             
             if(answer == "c")
             {
-                a.AddPokemonToCollection(existingPokemon[random]);
+                pokemonCollection.AddPokemons(existingPokemon[random], a);
             }
 
 

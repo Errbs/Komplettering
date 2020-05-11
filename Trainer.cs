@@ -32,7 +32,7 @@ namespace Komplettering
 
         public void Action1(Location trainerLocation) 
         {
-            trainerLocation.PrimaryAction();
+            trainerLocation.PrimaryAction(this);
 
         }
         public Location Action2(Location trainerLocation)
@@ -44,9 +44,13 @@ namespace Komplettering
 
     
        
-        public void PokemonCollection(int i, Location trainerLocation)
+        public void PokemonCollection(Location trainerLocation, Pokemon pokemon)
         {
-            trainerLocation.CheckCollection(this, i);
+            if (pokemons.Count > 0)
+            {
+                trainerLocation.CheckCollection(this, pokemon.index);
+            }
+            
             //pokemonCollection.PokemonCollection(i, this);
         }
         /*public void ThrowPokemon(Pokemon pokemon, Location trainerLocation)
@@ -60,9 +64,11 @@ namespace Komplettering
         {
             pokemonCollection.SetPokemonIndex(pokemon, this);
         }
+        /*
         public void AddPokemonToCollection(Pokemon pokemon)
         {
             pokemonCollection.AddPokemons(pokemon, this);
         }
+        */
     }
 }
