@@ -8,6 +8,11 @@ namespace Komplettering
 {
     class Location
     {
+        /*
+         * This parent class is basically abstract, however I couldn't make it an "abstract class". 
+         * Because I wanted to create a Location instance that later get defined 
+         * Having it be abstract stopped me from being able to do that.
+         */
         public string action1;
         public string action2;
         public string action3;
@@ -31,11 +36,11 @@ namespace Komplettering
 
         }
 
-       /* public virtual void RemoveFromCollection(Trainer a, Pokemon pokemon)
+       public virtual void RemoveFromCollection(Trainer a, Pokemon pokemon)
         {
 
         }
-        */
+        
 
 
         public virtual Location ChangeLocation(Location newLocation)

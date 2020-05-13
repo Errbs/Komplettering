@@ -8,6 +8,7 @@ namespace Komplettering
 {
     class Pokemon
     {
+        //This class is a parent class
         public string name;
         public int index;
         
@@ -25,6 +26,7 @@ namespace Komplettering
             outside.existingPokemon.Add(pidge);
             outside.existingPokemon.Add(squi);
             return outside.existingPokemon;
+            //This method adds Pokemon instances to the Outside class instance outside's existingPokemon list and returns it.
         }
         
         public virtual void PokemonIndex(int i)

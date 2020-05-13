@@ -8,14 +8,16 @@ namespace Komplettering
 {
     class Pidgey: Pokemon
     {
+        //Child class of Pokemon
         public Pidgey()
         {
             name = "Pidgey";
-            
+            //Defines the string name
         }
         public override void PokemonIndex(int i)
         {
             index = i;
+            //Defines the int index
         }
     }
 }

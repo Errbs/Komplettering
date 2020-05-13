@@ -8,16 +8,16 @@ namespace Komplettering
 {
     class Home: Location
     {
-        new Pikachu pikachu = new Pikachu();
-        new Pidgey pidgey = new Pidgey();
-        new Squirtle squirtle = new Squirtle();
-        new Collection collection = new Collection();
+        //This is a child class to the Location parent class
+        Collection pokemonCollection = new Collection();
+        //A collection instance called pokemonCollection
         public Home()
         {
             action1 = "Sleep";
             action2 = "Go to Outside";
             action3 = "Check Pokémon Collection";
             action4 = "Throw out a Pokémon";
+            //The constructor defines the different actions
         }
         public override void LocationActions(Trainer a, string act1, string act2, string act3, string act4)
         {
@@ -25,45 +25,37 @@ namespace Komplettering
             a.actions.Add(act2);
             a.actions.Add(act3);
             a.actions.Add(act4);
-
-
-
-
+            //This method adds the string parameters act-1,2,3 and 4 to the Trainer parameter instance  a's actions list
         }
         public override void ClearLocationActions(Trainer a)
         {
             a.actions.Clear();
+            //This method empties the Trainer parameter instance  a's actions list, so that it won't add act act-1,2,3 and 4 multiple times.
         }
 
         public override void PrimaryAction(Trainer a)
         {
-            
-            Console.WriteLine("S");
-            Console.WriteLine("L");
-            Console.WriteLine("E");
-            Console.WriteLine("E");
-            Console.WriteLine("P");
-            Console.WriteLine("I");
-            Console.WriteLine("N");
-            Console.WriteLine("G");
-            Console.WriteLine(".");
-            Console.WriteLine(".");
-            Console.WriteLine(".");
+            Console.Clear();
+            Console.WriteLine("S\nL\nE\nE\nP\nI\nN\nG\n.\n.\n.");
             Console.WriteLine("~~ M O R N I N G ~~");
+            //This method clears the console and then writes out a "loading sleeping screen" and then it writes out morning.
         }
 
         public override void CheckCollection(Trainer a, int i)
         {
-            
+            pokemonCollection.PokemonCollection(i, a);
+            //This method runs the Collection instance's PokemonCollection method.
         }
-        /*public override void RemoveFromCollection(Trainer a, Pokemon pokemon)
+        public override void RemoveFromCollection(Trainer a, Pokemon pokemon)
         {
-            
+            pokemonCollection.ThrowPokemon(a, pokemon);
+            //This method runs the Collection instance's RemoveFromCollection method.
         }
-        */
+
         public override Location ChangeLocation(Location newLocation)
         {
            return newLocation = new Outside();
+           //This method changes the value of the Location parameter newLocation and returns it.
         }
 
 
