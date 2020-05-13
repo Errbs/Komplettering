@@ -132,23 +132,6 @@ namespace Komplettering
             }
 
 
-
-
-
-
-
-                /*ash.AddPokemonToCollection(pikachu);
-                ash.AddPokemonToCollection(squirtle);
-                ash.PokemonCollection(squirtle.index);
-
-                ash.ThrowPokemon(pikachu.index, pikachu);
-                ash.ThrowPokemon(squirtle.index, squirtle);
-                ash.ThrowPokemon(squirtle.index, squirtle);
-                ash.AddPokemonToCollection(pidgey);
-                ash.PokemonCollection(pidgey.index);
-                ash.AddPokemonToCollection(pikachu);
-                */
-
                 Console.ReadLine();
         }
     }
